@@ -1,7 +1,3 @@
-SELECT distinct
-  strftime('%Y',InvoiceDate) as InvoiceYear,
-  COUNT(distinct InvoiceId) as InvoicesCount
+SELECT Count(*)
 FROM Invoice
-WHERE strftime('%Y',InvoiceDate) IN ('2009','2011')
-GROUP BY
-  strftime('%Y',InvoiceDate);
+WHERE InvoiceDate LIKE "2009%" OR InvoiceDate LIKE "2011%"
